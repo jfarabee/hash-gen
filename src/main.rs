@@ -13,6 +13,10 @@ fn main() {
     
     // method of encryption comes first
 
+    if args.len() < 2 {
+        panic!("Not enough arguments.");
+    }
+
     let method = &args[1];
 
     match method.as_str() {
@@ -20,6 +24,10 @@ fn main() {
         "-h"        => print_help_message(),
         _           => (),                      //no behavior if not help option
     };
+
+    if args.len() < 3 {
+        panic!("No filepath specified.");
+    }
 
     // then filename/path
     
