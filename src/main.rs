@@ -15,6 +15,12 @@ fn main() {
 
     let method = &args[1];
 
+    match method.as_str() {
+        "--help"    => print_help_message(),
+        "-h"        => print_help_message(),
+        _           => (),                      //no behavior if not help option
+    };
+
     // then filename/path
     
     let filepath = &args[2];
@@ -28,8 +34,6 @@ fn main() {
         "MD5"    => hash_md5(input),
         "SHA3"   => hash_sha3(input),
         "Blake2" => hash_blake(input),
-        "--help" => print_help_message(),
-        "-h"     => print_help_message(),
         _        => print_error_message(),
     };
 }
