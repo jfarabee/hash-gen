@@ -28,8 +28,22 @@ fn main() {
         "MD5"    => hash_md5(input),
         "SHA3"   => hash_sha3(input),
         "Blake2" => hash_blake(input),
+        "--help" => print_help_message(),
+        "-h"     => print_help_message(),
         _        => print_error_message(),
     };
+}
+
+fn print_help_message() {
+    println!("hash-gen usage:");
+    println!("./hash-gen [OPTIONS] [FILEPATH]");
+    println!("");
+    println!("OPTIONS:");
+    println!("  MD5");
+    println!("  SHA3");
+    println!("  Blake2");
+    println!("");
+    println!("to bring up this message, use --help | -h ");
 }
 
 fn print_error_message() {
