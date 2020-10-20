@@ -27,14 +27,14 @@ fn main() {
     match method.as_str() {
         "MD5"    => hash_md5(input),
         "SHA3"   => hash_sha3(input),
-        "blake2" => hash_blake(input),
+        "Blake2" => hash_blake(input),
         _        => print_error_message(),
     };
 }
 
 fn print_error_message() {
     println!("Hashing method unrecognized. Options:");
-    println!("  MD5     SHA3    blake2");
+    println!("  MD5     SHA3    Blake2");
 }
 
 fn hash_md5(plaintext: String) {
